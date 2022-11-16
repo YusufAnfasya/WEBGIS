@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WEBGIS</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma-rtl.min.css">
     
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.2/dist/leaflet.css"
     integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14="
@@ -18,27 +20,34 @@
     #map { height: 800px; }
 </style>
 <body>
+    <div id="text">
+        <h1 class="title" style="text-align: center;">
+            UNIVERSITAS NEGERI DI SURABAYA
+        </h1>
+
+        <p class="subtitle">
+            
+          </p>
+    </div>
     <div id="map"></div>
 
     <script>
-        var map = L.map('map').setView([-7.26415815727676, 112.80099684417785], 13);
-
+        var map = L.map('map').setView([-7.291654126841887, 112.73642595496369], 12);
+        
         L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
             maxZoom: 19,
             attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
         }).addTo(map);
 
         var marker = L.marker([-7.279704232796545, 112.79755834813355]).addTo(map);
+        var marker2 = L.marker([-7.271512502713555, 112.75881338766803]).addTo(map);
+        var marker3 = L.marker([-7.300644084496734, 112.67255136693527]).addTo(map);
+        var marker4 = L.marker([-7.332912393188607, 112.78819587536267]).addTo(map);
+        var marker4 = L.marker([-7.321521172641029, 112.73399352933166]).addTo(map);
 
-        var circle = L.circle([-7.264177978028131, 112.80090279459154], {
-            color: 'red',
-            fillColor: '#f03',
-            fillOpacity: 0.5,
-            radius: 100
-        }).addTo(map);
 
         marker.bindPopup("<b>Halo Cik dan Puan!</b><br>Saya Belajar Disini.").openPopup();
-
+        
 
     </script>
 
